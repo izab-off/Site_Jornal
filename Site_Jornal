@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornal Digital do Agrinho</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .hero-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                        url('https://source.unsplash.com/random/1920x1080/?soybean-field');
+      background-size: cover;
+      background-position: center;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+      transition: all 0.4s;
+    }
+  </style>
+</head>
+<body class="bg-zinc-50 font-sans">
+
+  <!-- HEADER -->
+  <header class="bg-zinc-900 text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <i class="fas fa-seedling text-4xl text-emerald-500"></i>
+        <div>
+          <h1 class="text-3xl font-bold tracking-tighter">AGRINHO</h1>
+          <p class="text-xs -mt-1 text-zinc-400">Jornal Digital do Campo</p>
+        </div>
+      </div>
+      
+      <nav class="hidden md:flex gap-8 text-lg">
+        <a href="#inicio" class="hover:text-emerald-400 transition">Início</a>
+        <a href="#agricultura" class="hover:text-emerald-400 transition">Agricultura</a>
+        <a href="#entrevistas" class="hover:text-emerald-400 transition">Entrevistas</a>
+        <a href="#sustentabilidade" class="hover:text-emerald-400 transition">Sustentabilidade</a>
+        <a href="#inovacoes" class="hover:text-emerald-400 transition">Inovações</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button onclick="document.getElementById('newsletter').scrollIntoView({behavior: 'smooth'})" 
+                class="bg-emerald-600 hover:bg-emerald-700 px-6 py-2.5 rounded-xl font-semibold transition">
+          Assine
+        </button>
+        <i class="fas fa-search text-xl cursor-pointer hover:text-emerald-400"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero-bg h-screen flex items-center text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="bg-white/20 backdrop-blur-md px-5 py-1.5 rounded-full text-sm font-medium">Destaque do Agro</span>
+      <h2 class="text-5xl md:text-6xl font-bold mt-6 leading-tight">
+        Agricultura 4.0: Como a tecnologia está revolucionando o agronegócio brasileiro
+      </h2>
+      <button onclick="openArticle(1)" 
+              class="mt-10 bg-white text-zinc-900 px-8 py-4 rounded-2xl font-bold hover:bg-emerald-100 transition text-lg">
+        Ler reportagem completa →
+      </button>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-6 py-16">
+
+    <!-- CATEGORIAS -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+      <a href="#agricultura" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition text-center border border-zinc-100">
+        <i class="fas fa-tractor text-4xl text-emerald-700 mb-4"></i>
+        <h3 class="font-semibold text-lg">Agricultura</h3>
+      </a>
+      <a href="#entrevistas" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition text-center border border-zinc-100">
+        <i class="fas fa-user-tie text-4xl text-emerald-700 mb-4"></i>
+        <h3 class="font-semibold text-lg">Entrevistas</h3>
+      </a>
+      <a href="#sustentabilidade" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition text-center border border-zinc-100">
+        <i class="fas fa-leaf text-4xl text-emerald-700 mb-4"></i>
+        <h3 class="font-semibold text-lg">Sustentabilidade</h3>
+      </a>
+      <a href="#inovacoes" class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition text-center border border-zinc-100">
+        <i class="fas fa-microchip text-4xl text-emerald-700 mb-4"></i>
+        <h3 class="font-semibold text-lg">Inovações</h3>
+      </a>
+    </div>
+
+    <!-- Seções com cards -->
+    <section id="agricultura" class="mt-12">
+      <h2 class="text-3xl font-bold mb-10 text-zinc-900">Agricultura</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer" onclick="openArticle(2)">
+          <img src="https://source.unsplash.com/random/600x400/?soybean" class="w-full h-56 object-cover">
+          <div class="p-7">
+            <span class="text-emerald-700 font-medium text-sm">Agricultura</span>
+            <h3 class="text-xl font-bold mt-3">Soja brasileira atinge recorde de produtividade em 2026</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="entrevistas" class="mt-24">
+      <h2 class="text-3xl font-bold mb-10 text-zinc-900">Entrevistas Exclusivas</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer" onclick="openArticle(3)">
+          <img src="https://source.unsplash.com/random/600x400/?farmer-interview" class="w-full h-56 object-cover">
+          <div class="p-7">
+            <span class="text-emerald-700 font-medium text-sm">Entrevista</span>
+            <h3 class="text-xl font-bold mt-3">"Tecnologia acessível é o futuro da agricultura familiar"</h3>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer" onclick="openArticle(4)">
+          <img src="https://source.unsplash.com/random/600x400/?cattle-farmer" class="w-full h-56 object-cover">
+          <div class="p-7">
+            <span class="text-emerald-700 font-medium text-sm">Entrevista</span>
+            <h3 class="text-xl font-bold mt-3">"ILPF transformou minha fazenda de pecuária"</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sustentabilidade" class="mt-24">
+      <h2 class="text-3xl font-bold mb-10 text-zinc-900">Sustentabilidade no Agro</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm card-hover cursor-pointer" onclick="openArticle(5)">
+          <img src="https://source.unsplash.com/random/600x400/?sustainable-farm" class="w-full h-56 object-cover">
+          <div class="p-7">
+            <span class="text-emerald-700 font-medium text-sm">Sustentabilidade</span>
+            <h3 class="text-xl font-bold mt-3">Recuperação de nascentes dobra em propriedades rurais</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="inovacoes" class="mt-24">
+      <h2 class="text-3xl font-bold mb-10 text-zinc-900">Inovações Tecnológicas no Campo</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-zinc-900 text-white p-10 rounded-3xl cursor-pointer" onclick="openArticle(6)">
+          <h3 class="text-2xl font-bold">Drones com IA reduzem defensivos em até 45% no agro</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div id="modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-[100] p-4">
+    <div class="bg-white max-w-3xl w-full mx-auto rounded-3xl max-h-[90vh] overflow-auto shadow-2xl">
+      <div class="p-8 md:p-12">
+        <button onclick="closeModal()" class="float-right text-4xl text-zinc-400 hover:text-zinc-600 leading-none">&times;</button>
+        <div id="modal-content" class="prose prose-zinc max-w-none text-lg leading-relaxed"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="bg-zinc-900 text-white py-20 mt-20">
+    <div class="max-w-2xl mx-auto text-center px-6">
+      <h2 class="text-4xl font-bold">Fique por dentro do Agro</h2>
+      <p class="mt-4 text-zinc-400">As melhores reportagens, entrevistas e inovações do campo toda semana</p>
+      <div class="mt-8 flex max-w-md mx-auto">
+        <input type="email" id="email" placeholder="Seu melhor email" 
+               class="flex-1 px-6 py-4 rounded-l-2xl bg-zinc-800 border border-zinc-700 focus:outline-none">
+        <button onclick="subscribe()" 
+                class="bg-emerald-600 hover:bg-emerald-700 px-10 rounded-r-2xl font-semibold">Assinar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-zinc-950 text-zinc-400 py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p>© 2026 Jornal Digital do Agrinho • Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    function openArticle(id) {
+      const modal = document.getElementById('modal');
+      const content = document.getElementById('modal-content');
+      
+      let html = '';
+
+      if (id === 1) {
+        html = `
+          <h1 class="text-4xl font-bold leading-tight">Agricultura 4.0: Como a tecnologia está revolucionando o agronegócio brasileiro</h1>
+          <p class="text-zinc-500 mt-3">09 de junho de 2026 • Por Ana Beatriz Oliveira</p>
+          
+          <p class="mt-8">O agronegócio brasileiro vive o maior salto tecnológico de sua história. Drones, sensores de solo, inteligência artificial, máquinas autônomas e sementes geneticamente editadas estão permitindo que produtores aumentem a produtividade, reduzam custos e preservem o meio ambiente.</p>
+          
+          <p class="mt-6">Em regiões como Mato Grosso, Goiás e Paraná, fazendas que adotaram agricultura de precisão registraram aumento médio de 25-32% na produtividade de soja e milho, com redução significativa no uso de água e defensivos. “Hoje conseguimos tomar decisões baseadas em dados em tempo real, e não mais no feeling”, afirma um grande produtor de Rondonópolis (MT).</p>
+          
+          <h3 class="text-2xl font-semibold mt-12">Principais avanços no Agro brasileiro</h3>
+          <ul class="list-disc pl-6 mt-4 space-y-3">
+            <li>Monitoramento via satélite e drones com IA para detecção precoce de pragas</li>
+            <li>Sistemas de irrigação inteligente que economizam até 40% de água</li>
+            <li>Plataformas de gestão rural integradas com previsão climática</li>
+            <li>Uso de biotecnologia para desenvolver variedades mais resistentes à seca e pragas</li>
+          </ul>
+          
+          <p class="mt-8">O desafio agora é democratizar essas tecnologias para a agricultura familiar, que representa mais de 70% dos estabelecimentos rurais no Brasil.</p>
+        `;
+      } 
+      else if (id === 2) {
+        html = `
+          <h1 class="text-4xl font-bold">Soja brasileira atinge recorde de produtividade em 2026</h1>
+          <p class="text-zinc-500 mt-3">08 de junho de 2026</p>
+          <p class="mt-8">A safra 2025/26 deve fechar com produtividade média recorde de 62,5 sacas por hectare. O avanço é resultado direto do uso de sementes de alta performance, agricultura de precisão e manejo sustentável do solo.</p>
+        `;
+      } 
+      else if (id === 3) {
+        html = `
+          <h1 class="text-4xl font-bold">"Tecnologia acessível é o futuro da agricultura familiar"</h1>
+          <p class="text-zinc-500 mt-3">Entrevista com Dona Rosa Silva, produtora de café em Poços de Caldas (MG)</p>
+          
+          <p class="mt-8">Com apenas 12 hectares, Dona Rosa conseguiu aumentar em 35% a produtividade do café e reduzir custos com defensivos em mais de 40% usando aplicativos gratuitos e um drone de baixo custo.</p>
+          
+          <p><strong>“A tecnologia não é só para os grandes. Eu uso meu celular para monitorar umidade do solo e receber alertas de pragas. Isso mudou minha vida e a de minha família.”</strong></p>
+        `;
+      } 
+      else if (id === 4) {
+        html = `
+          <h1 class="text-4xl font-bold">"ILPF transformou minha fazenda de pecuária"</h1>
+          <p class="text-zinc-500 mt-3">Entrevista com João Mendes, pecuarista em Sinop (MT)</p>
+          
+          <p class="mt-8">Após adotar o sistema de Integração Lavoura-Pecuária-Floresta, João aumentou a lotação de animais em 45%, melhorou a fertilidade do solo e ainda gera renda com o plantio de eucalipto.</p>
+        `;
+      } 
+      else if (id === 5) {
+        html = `
+          <h1 class="text-4xl font-bold">Recuperação de nascentes dobra em propriedades rurais certificadas</h1>
+          <p class="text-zinc-500 mt-3">07 de junho de 2026</p>
+          <p class="mt-8">Programas de Pagamento por Serviços Ambientais estão incentivando produtores rurais a recuperarem nascentes e áreas de preservação permanente, trazendo mais água para as propriedades e valorizando a produção sustentável no mercado.</p>
+        `;
+      } 
+      else if (id === 6) {
+        html = `
+          <h1 class="text-4xl font-bold">Drones com IA reduzem defensivos em até 45% no agro</h1>
+          <p class="text-zinc-500 mt-3">06 de junho de 2026</p>
+          <p class="mt-8">Startup brasileira desenvolve solução que identifica pragas com precisão e aplica defensivos apenas nos pontos necessários, gerando economia e menor impacto ambiental.</p>
+        `;
+      }
+
+      content.innerHTML = html;
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+    }
+
+    function subscribe() {
+      const email = document.getElementById('email').value;
+      if (email) {
+        alert("✅ Inscrição realizada com sucesso! Bem-vindo ao Agrinho.");
+        document.getElementById('email').value = '';
+      } else {
+        alert("Por favor, digite seu email.");
+      }
+    }
+
+    document.getElementById('modal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+</body>
+</html>
